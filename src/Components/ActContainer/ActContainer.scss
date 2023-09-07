@@ -1,0 +1,10 @@
+@use 'src/styles/_colors.scss';
+
+.act-container {
+    width: 100%;
+}
+
+.act-heading {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--semantic-colors-unit-text, #0F3569);
+}

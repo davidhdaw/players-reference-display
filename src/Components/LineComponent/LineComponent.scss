@@ -1,0 +1,55 @@
+@use 'src/styles/_colors.scss';
+
+.end-line, .stage-direction {
+    color: var(--semantic-colors-stage-direction, #473C53);
+    font-family: Poppins;
+    font-size: 19.2px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 30.72px
+};
+
+.line {
+    color: var(--semantic-colors-primary-text, #190B28);    
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 38.4px */
+    margin-block-end: 0px;
+    margin-block-start: 0px
+};
+
+.speaker, .speech-heading {
+    color: var(--semantic-colors-character-heading, #5E5468);
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    padding-top: 10px;
+    line-height: 160%; /* 38.4px */
+    margin-block-start: 0em;
+    margin-block-end: 0px;
+}
+
+.split-line {
+    color: var(--semantic-colors-primary-text, #190B28);
+    text-align: center;
+    font-family: Lora;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 38.4px */
+    margin-block-end: 0px;
+    margin-block-start: 0px
+};
+
+.lineNumber {
+    float: right;
+    color: var(--semantic-colors-line-number, #8C8594);
+    font-family: Lora;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 25.6px */
+};

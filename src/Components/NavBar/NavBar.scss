@@ -1,0 +1,27 @@
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 1vh;
+    border-bottom: 1px solid #8C8594;
+    position: fixed;
+    top: -15px;
+    z-index: 4;
+    background-color: #F6F7F9;
+    align-items: center;
+}
+
+.ButtonConatiner {
+    align-self: flex-end;
+    flex-grow: 1;
+    padding-right: 3vw;
+}
+
+.TitleContainer {
+    font-family: 'Montserrat', sans-serif;
+    color: #4B296B;
+    margin-left: 1vw;
+    text-align: left;
+    align-self: flex-start;
+    flex-grow: 1;
+}

@@ -1,0 +1,38 @@
+@use 'src/styles/_colors.scss';
+
+.unit-container {
+    margin-top: 24px;
+}
+
+.unit-info {
+    border-top: 1px;
+    border-bottom: 1px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: #2FA9F2;
+
+}
+
+.unit-heading {
+    //styleName: Unit/Unit Subheader;
+    font-family: Montserrat;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 0px;
+    text-align: left;
+    color:var(--semantic-colors-unit-text, #0F3569);
+}
+
+.unit-location, .unit-description {
+    //styleName: Unit/Unit Description;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0px;
+    text-align: left;
+    color:var(--semantic-colors-unit-text, #0F3569);
+}
+

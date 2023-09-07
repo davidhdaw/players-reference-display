@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { useState } from 'react';
+import NavBar from './Components/NavBar/NavBar';
+import NavShelf from './Components/NavShelf/NavShelf';
+import PlayContainer from './Components/PlayContainer/PlayContainer';
+import { playData } from './playData';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+console.log(playData)
+
+const [openDrawer, setOpenDrawer] = useState(true)
+
+  if(playData) {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <NavBar setOpenDrawer={setOpenDrawer} />
+        </header>
+        <body>
+        <PlayContainer play={playData} />
+        <NavShelf play={playData} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
+        </body>      
+      </div>
+    );
+  } 
 }
 
 export default App;
