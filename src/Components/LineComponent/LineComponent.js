@@ -23,10 +23,15 @@ const relevantNotes = line.Notes.filter(note => note.Type === viewType).sort((a,
 
 if (!line.cutType || line.cutType === 'none') {
 return (
-    <p className={lineType}>
+    <p className={lineType + ' line-container'} >
+        <span>
         {content}
         {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
         {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+        </span>
+        <span className='line-num'>
+        {line.lineNum}
+        </span>
     </p>
 )
 } else {

@@ -1,11 +1,13 @@
 import React from "react";
 import LineComponent from "../LineComponent/LineComponent";
+import GlossComponent from "../GlossComponent/GlossComponent";
 import "./UnitContainer.scss";
 import { useState } from "react";
 
 function UnitContainer({uniti, unit, acti}) {
     const [cutTrigger, setcutTrigger] = useState(false)
     const unitId = 'unit' + acti + uniti
+    const view = 'gloss'
     return(
         <div className='unit-container' id={unitId}>
             <div className='unit-info'>
@@ -14,8 +16,12 @@ function UnitContainer({uniti, unit, acti}) {
             <h3 className='unit-description'>{unit.description}</h3>
             </div>
             <div className='unit-lines'>
-            { unit.lines.map((line) => (
-                !cutTrigger && <LineComponent line={line} cutTrigger={cutTrigger} setcutTrigger={setcutTrigger} />
+            {/* { view === 'none' && unit.lines.map((line) => (
+               <LineComponent line={line} cutTrigger={cutTrigger} setcutTrigger={setcutTrigger} />
+                
+            ))} */}
+            { view === 'gloss' && unit.lines.map((line) => (
+                <GlossComponent line={line} viewType='gloss' cutTrigger={cutTrigger} setcutTrigger={setcutTrigger} />
             ))}
             </div>
         </div>
