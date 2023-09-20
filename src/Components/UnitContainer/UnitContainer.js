@@ -1,13 +1,14 @@
 import React from "react";
 import LineComponent from "../LineComponent/LineComponent";
-import GlossComponent from "../GlossComponent/GlossComponent";
+import PerformerComponent from "../PerformerComponent/PerformerComponent";
+import ReaderComponent from "../ReaderComponent/ReaderComponent";
+import StudentComponent from "../StudentComponent/StudentComponent";
 import "./UnitContainer.scss";
-import { useState } from "react";
 
-function UnitContainer({uniti, unit, acti}) {
-    const [cutTrigger, setcutTrigger] = useState(false)
+function UnitContainer({uniti, unit, acti, openNote, setOpenNote, viewMode, cutDisplay}) {
     const unitId = 'unit' + acti + uniti
-    const view = 'gloss'
+    const noteId = 'a' + acti + 'u' + uniti
+
     return(
         <div className='unit-container' id={unitId}>
             <div className='unit-info'>
@@ -16,12 +17,17 @@ function UnitContainer({uniti, unit, acti}) {
             <h3 className='unit-description'>{unit.description}</h3>
             </div>
             <div className='unit-lines'>
-            {/* { view === 'none' && unit.lines.map((line) => (
-               <LineComponent line={line} cutTrigger={cutTrigger} setcutTrigger={setcutTrigger} />
-                
-            ))} */}
-            { view === 'gloss' && unit.lines.map((line) => (
-                <GlossComponent line={line} viewType='gloss' cutTrigger={cutTrigger} setcutTrigger={setcutTrigger} />
+            { viewMode === 'Basic' && unit.lines.map((line) => (
+               <LineComponent line={line} cutDisplay={cutDisplay}  />    
+            ))}
+            { viewMode === 'Reader' && unit.lines.map((line, i) => (
+                <ReaderComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} />
+            ))}
+            { viewMode === 'Performer' && unit.lines.map((line, i) => (
+                <PerformerComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} />
+            ))}
+            { viewMode === 'Student' && unit.lines.map((line, i) => (
+                <StudentComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} />
             ))}
             </div>
         </div>
