@@ -23,15 +23,15 @@ function ActShelf({act, acti}) {
                             sx={{
 
                                 flexShrink: 0,
-                                color: '#F6F7F9',
-                                bgcolor: '#473C53',
+                                color: '#190B28',
+                                bgcolor: '#ffffff',
                             }}
             className={actClass}
             expandIcon={<ExpandMoreIcon                             sx={{
 
                 flexShrink: 0,
-                color: '#F6F7F9',
-                bgcolor: '#473C53',
+                color: '#190B28',
+                bgcolor: '#ffffff',
             }}/>}
             aria-controls="panel1a-content"
             id={actClass + '-accordion'}
@@ -41,8 +41,9 @@ function ActShelf({act, acti}) {
                 <AccordionDetails
                    sx={{
                         flexShrink: 0,
-                        color: '#F6F7F9',
-                        bgcolor: '#473C53',
+                        color: '#190B28',
+                        padding: '0px',
+                        bgcolor: '#ffffff',
                     }}>
                 <Grid container direction="column">
                     {
@@ -54,7 +55,9 @@ function ActShelf({act, acti}) {
                                 alignItems: 'flex-start', 
                                 width: 1/1,
                                 borderTop: 1,
-                                borderColor: 'white'}}>
+                                padding: '16px',
+                                color: '#190B28',
+                                borderColor: '#BAB6BF'}}>
                                     <h2 className='unit-num-shelf'>Unit {i+1}</h2>
                                     <p className='unit-description-shelf'>{unit.description}</p>
                                 </ListItemButton>
