@@ -72,5 +72,13 @@
 };
 
 .cutLine {
-    opacity: 0.3;
+    opacity: 0.4;
+}
+
+.hiddenLine {
+    border: none;
+    border-left: 2px dashed var(--semantic-colors-hidden-text, #BAB6BF);
+    height: 30px;
+    margin-block-start: 2px;
+    margin-block-end: 0px;
 }

@@ -37,7 +37,7 @@ return (
     }
     else if (cutDisplay === 'lines') {
     return (
-        <hr></hr>
+        <hr className="hiddenLine"></hr>
     )
     } else if (cutDisplay === 'greyed') {
         return (
