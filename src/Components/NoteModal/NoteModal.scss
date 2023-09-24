@@ -1,17 +1,37 @@
 .noteModal {
     background-color: white;
+    font-family: Montserrat;
     color: #0F3569;
-    border-radius: 10px;
-}
+    padding: 16px;
+    margin-bottom: 16px;
 
-.scansionHeader {
-    color: #1A936F;
-}
+    h2{
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        line-height: 21.9px;
+        font-weight: 600;
+        margin: 0;
+    }
 
-.performanceHeader {
-    color: #1A936F;
-}
+    &.scansionModal {
+        border-left: 2px solid var(--semantic-colors-scansion-color, #1A936F);
+        h2{
+            color: var(--semantic-colors-scansion-color, #1A936F);
+        }
+    }
 
-.studentHeader {
-    color: #067BC2;
+    &.performanceModal {
+        border-left: 2px solid var(--semantic-colors-performance-color, #1A936F);
+        h2{
+            color: var(--semantic-colors-performance-color, #1A936F);
+        }
+    }
+
+    &.studentModal {
+        border-left: 2px solid var(--semantic-colors-student-color, #067BC2);
+        h2{
+            color: var(--semantic-colors-student-color, #067BC2);
+        }
+    }
 }

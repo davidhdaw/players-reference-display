@@ -4,7 +4,7 @@ function NoteModal({note}) {
 
     if (note.type === 'scansion') {
     return(
-        <div className="noteModal">
+        <div className={note.type + 'Modal noteModal'} >
         <h2 className='scansionHeader'>{note.header}</h2>
         <p>{note.pronounciation}</p>
         <p>Rule: {note.rule}</p>
@@ -14,7 +14,7 @@ function NoteModal({note}) {
     )
     } else if (note.type === 'student' || note.type === 'performance') {
         return(
-            <div className="noteModal">
+            <div className={note.type + 'Modal noteModal'} >
             {note.type === 'student' && <h2 className='studentHeader'>{note.header}</h2>}
             {note.type === 'performance' && <h2 className='performanceHeader'>{note.header}</h2>}
             <p>{note.noteContent}</p>
