@@ -47,11 +47,12 @@ if (line.cutType && line.cutType !== 'none') {
             <p className={lineType + ' line-container'} >
             <span className='cutLine'>
             {content.join(' ')}
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
             </span>
             <span className='line-num cutLine'>
         {line.lineNum}
+        {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
+        {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
         </span>
         </p>
         )
@@ -61,11 +62,12 @@ if (line.cutType && line.cutType !== 'none') {
         <p className={lineType + ' line-container'} >
         <span>
         {content.join(' ')}
-        {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-        {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
         </span>
         <span className='line-num'>
         {line.lineNum}
+        {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
+        {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
         </span>
     </p>
     )
@@ -81,11 +83,12 @@ return (
             <span class="belowgloss">{relevantNotes[0].synonym}</span></span>
            }
           <span className='afterNote1'>{ ' ' + content.slice((relevantNotes[0].words[relevantNotes[0].words.length - 1] + 1)).join(' ')}</span>
-          {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-          {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
           </span>
           <span className='line-num'>
             {line.lineNum}
+            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
+            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
           </span>
     </p>
     </div>
@@ -106,11 +109,12 @@ return (
             <span class="belowgloss">{relevantNotes[1].synonym}</span></span>
            }
             <span className='afterNote2'>{ ' ' + content.slice((relevantNotes[1].words[relevantNotes[1].words.length - 1] + 1)).join(' ')}</span>
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
           </span>
           <span className='line-num'>
             {line.lineNum}
+            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
+            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
           </span>
     </p>
     </div>
@@ -135,11 +139,12 @@ return (
             <span class="belowgloss">{relevantNotes[2].synonym}</span></span>
            }
             <span className='afterNote3'>{ ' ' + content.slice((relevantNotes[2].words[relevantNotes[2].words.length - 1] + 1)).join(' ')}</span>
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
           </span>
           <span className='line-num'>
             {line.lineNum}
+            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
+            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
           </span>
     </p>
     </div>
