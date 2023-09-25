@@ -9,7 +9,7 @@
     line-height: 30.72px
 };
 
-.end-line {
+.end-line, .split-line {
     text-align: right;
 }
 
@@ -35,6 +35,15 @@
     margin-block-start: 0px
 };
 
+.q2Button {
+    color: #8C8594;
+    font-size: 16px;
+}
+
+.line-content {
+    width: 670px;
+};
+
 .speaker, .speech-heading {
     color: var(--semantic-colors-character-heading, #5E5468);
     font-family: Lora;
@@ -51,14 +60,17 @@
 
 .split-line {
     color: var(--semantic-colors-primary-text, #190B28);
-    text-align: center;
     font-family: Lora;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 38.4px */
     margin-block-end: 0px;
-    margin-block-start: 0px
+    margin-block-start: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end
 };
 
 .lineNumber {

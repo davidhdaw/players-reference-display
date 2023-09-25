@@ -5,7 +5,7 @@ import ReaderComponent from "../ReaderComponent/ReaderComponent";
 import StudentComponent from "../StudentComponent/StudentComponent";
 import "./UnitContainer.scss";
 
-function UnitContainer({uniti, unit, acti, openNote, setOpenNote, viewMode, cutDisplay}) {
+function UnitContainer({uniti, unit, acti, openNote, setOpenNote, viewMode, cutDisplay, altOption}) {
     const unitId = 'unit' + acti + uniti
     const noteId = 'a' + acti + 'u' + uniti
 
@@ -18,16 +18,16 @@ function UnitContainer({uniti, unit, acti, openNote, setOpenNote, viewMode, cutD
             </div>
             <div className='unit-lines'>
             { viewMode === 'Basic' && unit.lines.map((line) => (
-               <LineComponent line={line} cutDisplay={cutDisplay}  />    
+               <LineComponent line={line} cutDisplay={cutDisplay} altOption={altOption}  />    
             ))}
             { viewMode === 'Reader' && unit.lines.map((line, i) => (
-                <ReaderComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} />
+                <ReaderComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} altOption={altOption} />
             ))}
             { viewMode === 'Performer' && unit.lines.map((line, i) => (
-                <PerformerComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} />
+                <PerformerComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} altOption={altOption} />
             ))}
             { viewMode === 'Student' && unit.lines.map((line, i) => (
-                <StudentComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} />
+                <StudentComponent line={line} noteId={noteId + 'l' + i} openNote={openNote} setOpenNote={setOpenNote} cutDisplay={cutDisplay} altOption={altOption} />
             ))}
             </div>
         </div>

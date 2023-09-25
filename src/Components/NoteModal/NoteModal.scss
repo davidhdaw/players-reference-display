@@ -34,4 +34,14 @@
             color: var(--semantic-colors-student-color, #067BC2);
         }
     }
+};
+
+.modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.close-button {
+    transform: scale(1.5);
 }

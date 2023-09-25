@@ -9,17 +9,18 @@ function App() {
 console.log(playData)
 
 const [openDrawer, setOpenDrawer] = useState(false)
-const [viewMode, setViewMode] = useState('Reader')
+const [viewMode, setViewMode] = useState('Basic')
 const [cutDisplay, setCutDisplay] = useState('lines')
+const [altOption, setAltOption] = useState(false)
 
   if(playData) {
     return (
       <div className="App">
         <header className="App-header">
-          <NavBar setOpenDrawer={setOpenDrawer} viewMode={viewMode} setViewMode={setViewMode} setCutDisplay={setCutDisplay} />
+          <NavBar setOpenDrawer={setOpenDrawer} viewMode={viewMode} setViewMode={setViewMode} setCutDisplay={setCutDisplay} altOption={altOption} setAltOption={setAltOption} />
         </header>
         <body>
-        <PlayContainer play={playData} viewMode={viewMode} cutDisplay={cutDisplay} />
+        <PlayContainer play={playData} viewMode={viewMode} cutDisplay={cutDisplay} altOption={altOption} />
         <NavShelf play={playData} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
         </body>      
       </div>

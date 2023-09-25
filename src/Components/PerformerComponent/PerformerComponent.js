@@ -1,10 +1,10 @@
 import './PerformerComponent.scss'
 import { useState } from 'react'
 import { IconButton } from '@mui/material'
-import { Autorenew, Loop } from '@mui/icons-material'
+import { SyncAlt } from '@mui/icons-material'
 import NoteModal from '../NoteModal/NoteModal'
 
-function PerformerComponent({line, noteId, openNote, setOpenNote, cutDisplay}) {
+function PerformerComponent({line, noteId, openNote, setOpenNote, cutDisplay, altOption}) {
 const lineType = line.Type.split(' ').join('-')
 
 const [alt, setAlt] = useState(false)
@@ -30,8 +30,11 @@ const swapContent = () => {
 setAlt(!alt)
 }
 const setNote = (note) => {
+    if (note !== openNote) {
     setOpenNote(note)
-    console.log(openNote)
+    } else {
+    setOpenNote('')
+    }
 }
 
 if (line.cutType && line.cutType !== 'none') {
@@ -49,8 +52,10 @@ if (line.cutType && line.cutType !== 'none') {
             <p className={lineType + ' cutLine'} >
             <span>
             {content.join(' ')}
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+            </span>
+            <span className='alt-button'>            
+            {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
             </span>
         </p>
         )
@@ -60,8 +65,10 @@ if (line.cutType && line.cutType !== 'none') {
         <p className={lineType + ' line-container'} >
         <span>
         {content.join(' ')}
-        {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-        {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+        </span>
+        <span className='alt-button'>            
+        {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
         </span>
     </p>
     )
@@ -81,11 +88,13 @@ return (
                 <span className="SpeakerNote" onClick={() => setNote(noteId + 'p0')} >{relevantNotes[0].newWording} </span>     
             }
           <span className='afterNote1'>{ ' ' + content.slice((relevantNotes[0].words[relevantNotes[0].words.length - 1] + 1)).join(' ')}</span>
-          {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-          {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+          </span>
+          <span className='alt-button'>            
+          {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
           </span>
     </p>
-    { (openNote === (noteId + 'p0')) && <NoteModal note={relevantNotes[0]} />}
+    { (openNote === (noteId + 'p0')) && <NoteModal setOpenNote={setOpenNote} note={relevantNotes[0]} />}
     </div>
 )
 } else if (relevantNotes.length === 2) {
@@ -112,12 +121,14 @@ return (
                 <span className="SpeakerNote" onClick={() => setNote(noteId + 'p1')} >{relevantNotes[1].newWording} </span>     
             }
             <span className='afterNote2'>{ ' ' + content.slice((relevantNotes[1].words[relevantNotes[1].words.length - 1] + 1)).join(' ')}</span>
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
-          </span>
+            </span>
+            <span className='alt-button'>            
+            {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+            </span>
     </p>
-    { (openNote === (noteId + 'p0')) && <NoteModal note={relevantNotes[0]} />}
-    { (openNote === (noteId + 'p1')) && <NoteModal note={relevantNotes[1]} />}
+    { (openNote === (noteId + 'p0')) && <NoteModal setOpenNote={setOpenNote} note={relevantNotes[0]} />}
+    { (openNote === (noteId + 'p1')) && <NoteModal setOpenNote={setOpenNote} note={relevantNotes[1]} />}
     </div>
 )
 } else if (relevantNotes.length === 3) {
@@ -152,13 +163,15 @@ return (
                 <span className="SpeakerNote" onClick={() => setNote(noteId + 'p2')} >{relevantNotes[2].newWording} </span>     
             }
             <span className='afterNote3'>{ ' ' + content.slice((relevantNotes[2].words[relevantNotes[2].words.length - 1] + 1)).join(' ')}</span>
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
           </span>
+          <span className='alt-button'>            
+          {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+         </span>
     </p>
-    { (openNote === (noteId + 'p0')) && <NoteModal note={relevantNotes[0]} />}
-    { (openNote === (noteId + 'p1')) && <NoteModal note={relevantNotes[1]} />}
-    { (openNote === (noteId + 'p2')) && <NoteModal note={relevantNotes[2]} />}
+    { (openNote === (noteId + 'p0')) && <NoteModal setOpenNote={setOpenNote} note={relevantNotes[0]} />}
+    { (openNote === (noteId + 'p1')) && <NoteModal setOpenNote={setOpenNote} note={relevantNotes[1]} />}
+    { (openNote === (noteId + 'p2')) && <NoteModal setOpenNote={setOpenNote} note={relevantNotes[2]} />}
     </div>
 )
 }
