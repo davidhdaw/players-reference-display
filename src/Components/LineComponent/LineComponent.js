@@ -1,9 +1,9 @@
 import './LineComponent.scss'
 import { useState } from 'react'
 import { IconButton } from '@mui/material'
-import { Autorenew, Loop } from '@mui/icons-material'
+import { Autorenew, Loop, SyncAlt } from '@mui/icons-material'
 
-function LineComponent({line, viewType, cutDisplay}) {
+function LineComponent({line, cutDisplay, altOption}) {
 const lineType = line.Type.split(' ').join('-')
 
 const [alt, setAlt] = useState(false)
@@ -22,10 +22,12 @@ setAlt(!alt)
 if (!line.cutType || line.cutType === 'none') {
 return (
     <p className={lineType + ' line-container'} >
-        <span>
+        <span className='line-content'>
         {content}
-        {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-        {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+        </span>
+        <span className='alt-button'>            
+            {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
         </span>
     </p>
 )
@@ -37,15 +39,17 @@ return (
     }
     else if (cutDisplay === 'lines') {
     return (
-        <hr></hr>
+        <hr className="hiddenLine"></hr>
     )
     } else if (cutDisplay === 'greyed') {
         return (
             <p className={lineType + ' cutLine'} >
-            <span>
+            <span className='line-content'>
             {content}
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+            </span>
+            <span className='alt-button'>            
+            {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
             </span>
         </p>
         )

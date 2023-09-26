@@ -1,11 +1,18 @@
+import { Close } from '@mui/icons-material';
 import './NoteModal.scss'
+import CloseIcon from '@mui/icons-material/Close';
 
-function NoteModal({note}) {
+function NoteModal({note, setOpenNote}) {
 
     if (note.type === 'scansion') {
     return(
-        <div className="noteModal">
-        <h2 className='scansionHeader'>{note.header}</h2>
+        <div className={note.type + 'Modal noteModal'} >
+        <h2 className='modal-header'>
+            <span>
+            {note.header}
+            </span>
+            <CloseIcon className='close-button' onClick={e => (setOpenNote(''))} />
+        </h2>
         <p>{note.pronounciation}</p>
         <p>Rule: {note.rule}</p>
         <p>{note.noteContent}</p>
@@ -14,9 +21,13 @@ function NoteModal({note}) {
     )
     } else if (note.type === 'student' || note.type === 'performance') {
         return(
-            <div className="noteModal">
-            {note.type === 'student' && <h2 className='studentHeader'>{note.header}</h2>}
-            {note.type === 'performance' && <h2 className='performanceHeader'>{note.header}</h2>}
+            <div className={note.type + 'Modal noteModal'} >
+            <h2 className='modal-header'>
+                <span>
+                {note.header}
+                </span>
+                <CloseIcon className='close-button' onClick={e => (setOpenNote(''))} />
+            </h2>
             <p>{note.noteContent}</p>
             </div>
         )

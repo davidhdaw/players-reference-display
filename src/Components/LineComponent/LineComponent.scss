@@ -9,6 +9,10 @@
     line-height: 30.72px
 };
 
+.end-line, .split-line {
+    text-align: right;
+}
+
 .line-container {
     display: flex;
     justify-content: space-between
@@ -27,32 +31,46 @@
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 38.4px */
-    margin-block-end: 0px;
+    margin-block-end: 16px;
     margin-block-start: 0px
+};
+
+.q2Button {
+    color: #8C8594;
+    font-size: 16px;
+}
+
+.line-content {
+    width: 670px;
 };
 
 .speaker, .speech-heading {
     color: var(--semantic-colors-character-heading, #5E5468);
     font-family: Lora;
-    font-size: 24px;
+    font-size: 16.8px;
     font-style: normal;
     font-weight: 400;
     padding-top: 10px;
     line-height: 160%; /* 38.4px */
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-block-start: 0em;
     margin-block-end: 0px;
 }
 
 .split-line {
     color: var(--semantic-colors-primary-text, #190B28);
-    text-align: center;
     font-family: Lora;
     font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: 160%; /* 38.4px */
     margin-block-end: 0px;
-    margin-block-start: 0px
+    margin-block-start: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end
 };
 
 .lineNumber {
@@ -66,5 +84,13 @@
 };
 
 .cutLine {
-    opacity: 0.3;
+    opacity: 0.4;
+}
+
+.hiddenLine {
+    border: none;
+    border-left: 2px dashed var(--semantic-colors-hidden-text, #BAB6BF);
+    height: 30px;
+    margin-block-start: 2px;
+    margin-block-end: 0px;
 }

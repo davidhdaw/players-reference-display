@@ -1,8 +1,20 @@
-$primary-color: #190B28;
-$reader-text: #DA4167;
-$line-number: #8C8594;
 $Blue-200: #2FA9F2;
-$stage-direction: #473C53;
+$Grey-200: #BAB6BF;
+
+$primary-color: #190B28;
+
+$reader-text: #DA4167;
+$unit-text: #0F3569;
+
 $character-heading: #5E5468;
-$cut-text: #BAB6BF;
-$unit-text: #0F3569
+$line-number: #8C8594;
+$stage-direction: #473C53;
+
+$hidden-text: $Grey-200;
+$cut-text: $Grey-200;
+
+$menu-border: $Grey-200;
+
+$scansion-color: #1A936F;
+$performance-color: #1A936F;
+$student-color: #067BC2;

@@ -17,11 +17,11 @@ function NavShelf({play, openDrawer, setOpenDrawer}) {
                 sx={{
                     width: 1/4,
                     flexShrink: 0,
-                    color: '#F6F7F9',
-                    bgcolor: '#473C53',
+                    color: '#190B28',
+                    bgcolor: '#ffffff',
                     '& .MuiDrawer-paper': {
                     width: 1/4,
-                    bgcolor: '#473C53',
+                    bgcolor: '#ffffff'
                     },
                 }}
               variant="persistent"

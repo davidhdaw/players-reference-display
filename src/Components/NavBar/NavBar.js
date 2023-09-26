@@ -5,7 +5,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ListIcon from '@mui/icons-material/List';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-function NavBar({setOpenDrawer, viewMode, setViewMode, setCutDisplay}) {
+function NavBar({setOpenDrawer, viewMode, setViewMode, setCutDisplay, altOption, setAltOption}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [anchorSettingsEl, setAnchorSettingsEl] = React.useState(null);
     const modeOpen = Boolean(anchorEl);
@@ -122,6 +122,9 @@ if (viewMode === 'Basic') {
           horizontal: 'left',
         }}
       >
+                {
+            altOption ? <MenuItem onClick={(e) => setAltOption(false)}>Hide Alternate Lines</MenuItem> : <MenuItem onClick={(e) => setAltOption(true)}>View Alternate Lines</MenuItem>
+        }
         <MenuItem>Display Cut Lines</MenuItem>
         <MenuItem onClick={(e) => changeCutDisplay('greyed')}>Greyed Out</MenuItem>
         <MenuItem onClick={(e) => changeCutDisplay('lines')}>-------</MenuItem>

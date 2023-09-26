@@ -2,9 +2,9 @@ import './ReaderComponent.scss'
 import { useState } from 'react'
 import NoteModal from '../NoteModal/NoteModal'
 import { IconButton } from '@mui/material'
-import { Autorenew, Loop } from '@mui/icons-material'
+import { SyncAlt } from '@mui/icons-material'
 
-function ReaderComponent({line, noteId, cutDisplay}) {
+function ReaderComponent({line, noteId, cutDisplay, altOption}) {
 const lineType = line.Type.split(' ').join('-')
 
 const [alt, setAlt] = useState(false)
@@ -40,20 +40,24 @@ if (line.cutType && line.cutType !== 'none') {
     }
     else if (cutDisplay === 'lines') {
     return (
-        <hr></hr>
+        <hr className="hiddenLine"></hr>
     )
     } else if (cutDisplay === 'greyed') {
         return (
             <p className={lineType + ' line-container'} >
-            <span className='cutLine'>
-            {content.join(' ')}
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
-            </span>
-            <span className='line-num cutLine'>
-        {line.lineNum}
-        </span>
-        </p>
+                <span className='cutLine'>
+                {content.join(' ')}
+                </span>
+                <span className='post-line cutLine'>
+                <span className='line-num'>
+                    {line.lineNum}
+                </span>
+                <span className='alt-button'>
+                {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+                </span>
+                </span>
+            </p>
         )
     }
 } else if (relevantNotes.length === 0) {
@@ -61,11 +65,16 @@ if (line.cutType && line.cutType !== 'none') {
         <p className={lineType + ' line-container'} >
         <span>
         {content.join(' ')}
-        {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-        {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
         </span>
+        <span className='post-line'>
+
         <span className='line-num'>
         {line.lineNum}
+        </span>
+        <span className='alt-button'>
+        {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+        </span>
         </span>
     </p>
     )
@@ -81,12 +90,18 @@ return (
             <span class="belowgloss">{relevantNotes[0].synonym}</span></span>
            }
           <span className='afterNote1'>{ ' ' + content.slice((relevantNotes[0].words[relevantNotes[0].words.length - 1] + 1)).join(' ')}</span>
-          {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-          {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
           </span>
-          <span className='line-num'>
-            {line.lineNum}
-          </span>
+          <span className='post-line'>
+
+        <span className='line-num'>
+        {line.lineNum}
+        </span>
+        <span className='alt-button'>
+        {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+        </span>
+        </span>
     </p>
     </div>
 )
@@ -106,12 +121,16 @@ return (
             <span class="belowgloss">{relevantNotes[1].synonym}</span></span>
            }
             <span className='afterNote2'>{ ' ' + content.slice((relevantNotes[1].words[relevantNotes[1].words.length - 1] + 1)).join(' ')}</span>
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
           </span>
-          <span className='line-num'>
-            {line.lineNum}
-          </span>
+          <span className='post-line'>
+        <span className='line-num'>
+        {line.lineNum}
+        </span>
+        <span className='alt-button'>
+            {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+        </span>
+        </span>
     </p>
     </div>
 )
@@ -135,12 +154,17 @@ return (
             <span class="belowgloss">{relevantNotes[2].synonym}</span></span>
            }
             <span className='afterNote3'>{ ' ' + content.slice((relevantNotes[2].words[relevantNotes[2].words.length - 1] + 1)).join(' ')}</span>
-            {line.altContent && !alt && <IconButton onClick={swapContent}><Autorenew/></IconButton>}
-            {line.altContent && alt && <IconButton onClick={swapContent}><Loop /></IconButton>}
+
           </span>
-          <span className='line-num'>
-            {line.lineNum}
-          </span>
+          <span className='post-line'>
+        <span className='line-num'>
+        {line.lineNum}
+        </span>
+        <span className='alt-button'>
+            {line.altContent && altOption && !alt && <IconButton onClick={swapContent}><SyncAlt/></IconButton>}
+            {line.altContent && altOption && alt && <IconButton onClick={swapContent}><span className='q2Button'>Q2</span></IconButton>}
+        </span>
+        </span>
     </p>
     </div>
 )
