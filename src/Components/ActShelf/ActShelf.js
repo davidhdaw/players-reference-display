@@ -18,7 +18,7 @@ function ActShelf({act, acti}) {
 
     return(
         <div className='ActShelf'>
-            <Accordion>
+            <Accordion defaultExpanded={true}>
             <AccordionSummary
                             sx={{
 
