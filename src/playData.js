@@ -2267,7 +2267,7 @@ export const playData = [
                                 3
                             ],
                             "header": "Ad-libbing the Fight Dialogue",
-                            "noteContent": "From this point on, Q1 indicates all the actions included in Units 4 and 5 in a stage direction describing the escalating fight, but includes none of the dialogue: \"They draw. To them enters Tybalt. They fight. To them the Prince, old Montague and his wife, old Capulet and his wife, and other citizens, and part them.\" In all probability, this indicates that the dialogue in Q2 was written out later for the benefit of readers from the ad-libs used in performance, but the prompter was following the fight choreography instead of the words. Neither he nor the audience were not expected to take in or remember the lines being shouted simultaneously during the fight sequence.",
+                            "noteContent": "From this point on, Q1 indicates all the actions included in Units 4 and 5 in a stage direction describing the escalating fight, but includes none of the dialogue.\n\nIt reads: \"They draw. To them enters Tybalt. They fight. To them the Prince, old Montague and his wife, old Capulet and his wife, and other citizens, and part them.\" \n\nIn all probability, the dialogue in Q2 was written out later for the benefit of readers from the ad-libs used in performance. The prompter was following the fight choreography instead of the words. Neither he nor the audience were expected to take in or remember the lines being shouted simultaneously during the fight sequence.",
                             "type": "performance"
                         }
                     ]
@@ -8596,17 +8596,6 @@ export const playData = [
                         },
                         {
                             "words": [
-                                3
-                            ],
-                            "newWording": "fire",
-                            "header": "Scansion: shortening",
-                            "pronounciation": "fire; faɪr",
-                            "rule": "Elision",
-                            "noteContent": "This word uses the single-syllable pronunciation.",
-                            "type": "scansion"
-                        },
-                        {
-                            "words": [
                                 0,
                                 7
                             ],
@@ -9478,14 +9467,6 @@ export const playData = [
                     "Type": "line",
                     "cutType": "none",
                     "Notes": [
-                        {
-                            "words": [
-                                0
-                            ],
-                            "header": "Shared lines, and a performance decision",
-                            "noteContent": "These lines form a single line of verse, but there may be an implicit joke here that Romeo is incorporating Peter’s prose into his verse! Probably, in Shakespeare’s time “Whither?” would be subject to the “missing V” rule and would have occupied only one syllable , so the servant’s line previous would also be included. Because modern audiences are not used to this convention, the most common performance practice is simply to treat this as a rapid exchange. Stichomythia! ",
-                            "type": "performance"
-                        },
                         {
                             "words": [
                                 0
@@ -10858,21 +10839,21 @@ export const playData = [
                                 6,
                                 7
                             ],
-                            "newWording": "Sh'be",
+                            "newWording": "sh'be",
                             "header": "Scansion: shortening",
-                            "pronounciation": "shbee; [ʃbi]",
+                            "pronounciation": "pronounciation: shbee; ʃbi ",
                             "rule": "Contraction",
                             "noteContent": "Contraction of “she be” to one word & syllable.",
                             "type": "scansion"
                         },
                         {
                             "words": [
-                                5,
-                                6
+                                6,
+                                7
                             ],
                             "header": "Alternative Text",
-                            "noteContent": "Both quartos say “she shall” here and four lines down. However, that is clearly an error as that construction cannot be made to scan. The Folio arrangement is the only way to arrange this speech as verse. ",
-                            "type": "performance"
+                            "noteContent": "Both quartos say “she shall” here and four lines down. However, that is clearly an error as that construction cannot be made to scan. The Folio arrangement is the only way to arrange this speech as verse.\n\n",
+                            "type": "student"
                         }
                     ],
                     "lineNum": 18
@@ -13589,6 +13570,15 @@ export const playData = [
                             ],
                             "synonym": "any allegedly memorized",
                             "type": "gloss"
+                        },
+                        {
+                            "words": [
+                                0,
+                                5
+                            ],
+                            "header": "Q1 Addition?",
+                            "noteContent": "Neither this line nor the following one appears in the Master Text (Q2), which is very unusual. (Cuts almost always happen in Q1, not in Q2.) It may indicate that these lines were added at some later date, but their absence may also have been the result of a printer's error.\n\n",
+                            "type": "performance"
                         }
                     ],
                     "lineNum": 7
@@ -13624,15 +13614,6 @@ export const playData = [
                             "rule": "Glide Vowel",
                             "noteContent": "This word is stretched by the addition of a glide vowel in its middle syllable. Benvolio may be pronouncing it \"funny,\" on purpose, like putting it in air quotes.",
                             "type": "scansion"
-                        },
-                        {
-                            "words": [
-                                0,
-                                5
-                            ],
-                            "header": "Q1 Addition?",
-                            "noteContent": "Neither the previous line nor this one appears in the Master Text (Q2), which is very unusual. (Cuts almost always happen in Q1, not in Q2.) It may indicate that these lines were added at some later date, but their absence may also have been the result of a printer's error.",
-                            "type": "performance"
                         }
                     ],
                     "lineNum": 8
@@ -18101,18 +18082,14 @@ export const playData = [
                 {
                     "Content": [
                         "Romeo",
-                        "reclaims",
-                        "the",
-                        "stage",
+                        "reëmerges",
                         "from",
-                        "wherever",
-                        "he",
-                        "had",
-                        "withdrawn",
-                        "in",
                         "the",
-                        "previous",
-                        "unit."
+                        "crowd",
+                        "and",
+                        "takes",
+                        "center",
+                        "stage."
                     ],
                     "Type": "stage direction",
                     "cutType": "none",
@@ -18120,10 +18097,10 @@ export const playData = [
                         {
                             "words": [
                                 0,
-                                3
+                                4
                             ],
                             "header": "A Soliloquy in the Platea",
-                            "noteContent": "This is a really interesting unit, which is completely changed by the cut utilized in Q1. A mundane exchange with a servant is transformed into a soliloquy in the platea. In most modern performances Romeo comes to the forestage and directly addresses the audience. Performers in the background sometimes freeze.",
+                            "noteContent": "This is a really interesting unit, which is completely changed by the cut utilized in Q1. A mundane exchange with a servant is transformed into a soliloquy in the platea. In most modern performances Romeo comes to the forestage and directly addresses the audience. Performers in the background sometimes freeze.\n\n",
                             "type": "performance"
                         }
                     ]
@@ -18265,8 +18242,8 @@ export const playData = [
                                 6
                             ],
                             "header": "Sensitivity Note",
-                            "noteContent": "The reference to the ethnicity of the wearer of the earring to establish the contrast between the jewel and the dark skin color is offensive to many people today, and many productions endeavor to find substitutions that are less racist. A possible two-syllable word with precedent in the scene is \"pilgrim,\" which has the advantage that it does not imply any particular skin tone. One recent production took the interesting approach of reversing the use of light and dark by substituting \"pallid\" here.",
-                            "type": "performance"
+                            "noteContent": "The reference to the ethnicity of the wearer of the earring to establish the contrast between the jewel and the dark skin color is offensive to many people today, and many productions endeavor to find substitutions that are less racist. A possible two-syllable word with precedent in the scene is \"pilgrim,\" which has the advantage that it does not imply any particular skin tone. One recent production took a bolder approach by reversing the use of light and dark by substituting \"pallid\" here.",
+                            "type": "student"
                         }
                     ],
                     "lineNum": 5
@@ -19168,21 +19145,21 @@ export const playData = [
                     "Notes": [
                         {
                             "words": [
+                                5
+                            ],
+                            "synonym": "well-behaved",
+                            "type": "gloss"
+                        },
+                        {
+                            "words": [
                                 3
                             ],
-                            "newWording": "Virt'yous",
+                            "newWording": "virt'yous",
                             "header": "Scansion: shortening",
                             "pronounciation": "vurch-wuhs;  ˈvɜr tʃwəs",
                             "rule": "Elision",
                             "noteContent": "The final two syllables of this word are blended together.",
                             "type": "scansion"
-                        },
-                        {
-                            "words": [
-                                5
-                            ],
-                            "synonym": "well-behaved",
-                            "type": "gloss"
                         }
                     ],
                     "lineNum": 15
