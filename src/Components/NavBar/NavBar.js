@@ -10,6 +10,12 @@ function NavBar({setOpenDrawer, viewMode, setViewMode, setCutDisplay, altOption,
     const [anchorSettingsEl, setAnchorSettingsEl] = React.useState(null);
     const modeOpen = Boolean(anchorEl);
     const settingsOpen = Boolean(anchorSettingsEl);
+
+
+
+
+
+
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
