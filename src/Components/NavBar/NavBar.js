@@ -5,7 +5,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ListIcon from '@mui/icons-material/List';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 
-function NavBar({setOpenDrawer, viewMode, setViewMode, setCutDisplay, altOption, setAltOption}) {
+function NavBar({setOpenDrawer, viewMode, setSettingsOpen, setViewMode, setCutDisplay, altOption, setAltOption}) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [anchorSettingsEl, setAnchorSettingsEl] = React.useState(null);
     const modeOpen = Boolean(anchorEl);
@@ -37,7 +37,16 @@ const changeViewMode = (mode) => {
 
 const changeCutDisplay = (display) => {
     console.log(display)
-    setCutDisplay(display)
+    setCutDisplay(
+      {
+        sceneDeleted: display,
+        redundancy: display,
+        purple: display,
+        cutForLength: display,
+        shorteningFemales: display,
+        moved: display,
+      }
+      )
     handleSettingsClose()
 }
 
@@ -63,7 +72,7 @@ if (viewMode === 'Basic') {
   return (
     <div className="NavBar">
         <div className="TitleContainer">
-            <h4>Romeo & Juliet</h4>
+            <h4 onClick={() => setSettingsOpen(false)}>Romeo & Juliet</h4>
         </div>
         <div className="ButtonContainer">
         <Button variant="contained" 
@@ -83,6 +92,7 @@ if (viewMode === 'Basic') {
         id="mode-positioned-menu"
         aria-labelledby="mode-positioned-button"
         anchorEl={anchorEl}
+        disableScrollLock={true} 
         open={modeOpen}
         onClose={handleClose}
         anchorOrigin={{
@@ -117,6 +127,7 @@ if (viewMode === 'Basic') {
         id="settings-positioned-menu"
         aria-labelledby="settings-positioned-button"
         anchorEl={anchorSettingsEl}
+        disableScrollLock={true} 
         open={settingsOpen}
         onClose={handleSettingsClose}
         anchorOrigin={{
@@ -135,6 +146,7 @@ if (viewMode === 'Basic') {
         <MenuItem onClick={(e) => changeCutDisplay('greyed')}>Greyed Out</MenuItem>
         <MenuItem onClick={(e) => changeCutDisplay('lines')}>-------</MenuItem>
         <MenuItem onClick={(e) => changeCutDisplay('none')}>None</MenuItem>
+        <MenuItem onClick={(e) => setSettingsOpen(true)}>Cut Display Settings</MenuItem>
       </Menu>
         </div>
     </div>
