@@ -19,7 +19,27 @@ const swapContent = () => {
 setAlt(!alt)
 }
 
-if (!line.cutType || line.cutType === 'none') {
+let thisCutType = ''
+if (line.cutType === "Entire scene or chorus deleted from Q1") {
+    thisCutType = cutDisplay.sceneDeleted
+}
+if (line.cutType === "Redundancy") {
+    thisCutType = cutDisplay.redundancy
+}
+if (line.cutType === "Purple passage") {
+    thisCutType = cutDisplay.purple
+}
+if (line.cutType === "Cut for length") {
+    thisCutType = cutDisplay.cutForLength
+}
+if (line.cutType === "Shortening of female role(s)") {
+    thisCutType = cutDisplay.shorteningFemales
+}
+if (line.cutType === "Relocated in Q1") {
+    thisCutType = cutDisplay.moved
+}
+
+if (thisCutType === '') {
 return (
     <p className={lineType + ' line-container'} >
         <span className='line-content'>
@@ -32,16 +52,16 @@ return (
     </p>
 )
 } else {
-    if (cutDisplay === 'none') {
+    if (thisCutType === 'none') {
         return (
             <span></span>
         )
     }
-    else if (cutDisplay === 'lines') {
+    else if (thisCutType === 'lines') {
     return (
         <hr className="hiddenLine"></hr>
     )
-    } else if (cutDisplay === 'greyed') {
+    } else if (thisCutType === 'greyed') {
         return (
             <p className={lineType + ' cutLine'} >
             <span className='line-content'>
