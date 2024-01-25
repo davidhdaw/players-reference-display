@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Button, Menu, MenuItem } from '@mui/material';
+import { IconButton, Button, Menu, MenuItem, Divider } from '@mui/material';
 import './NavBar.scss';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ListIcon from '@mui/icons-material/List';
@@ -47,7 +47,6 @@ const changeCutDisplay = (display) => {
         moved: display,
       }
       )
-    handleSettingsClose()
 }
 
 const openDrawer = () => {
@@ -142,10 +141,12 @@ if (viewMode === 'Basic') {
                 {
             altOption ? <MenuItem onClick={(e) => setAltOption(false)}>Hide Alternate Lines</MenuItem> : <MenuItem onClick={(e) => setAltOption(true)}>View Alternate Lines</MenuItem>
         }
-        <MenuItem>Display Cut Lines</MenuItem>
+                <Divider />
+        <p> Cut Lines:</p>
         <MenuItem onClick={(e) => changeCutDisplay('greyed')}>Greyed Out</MenuItem>
-        <MenuItem onClick={(e) => changeCutDisplay('lines')}>-------</MenuItem>
-        <MenuItem onClick={(e) => changeCutDisplay('none')}>None</MenuItem>
+        <MenuItem onClick={(e) => changeCutDisplay('lines')}>Dashed Line ---</MenuItem>
+        <MenuItem onClick={(e) => changeCutDisplay('none')}>Hidden</MenuItem>
+        <Divider />
         <MenuItem onClick={(e) => setSettingsOpen(true)}>Cut Display Settings</MenuItem>
       </Menu>
         </div>
