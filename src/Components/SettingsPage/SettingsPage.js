@@ -1,6 +1,6 @@
 import React from "react";
 import "./SettingsPage.scss";
-import { IconButton, Button} from '@mui/material';
+import { IconButton, Button, Divider} from '@mui/material';
 function SettingsPage({ cutDisplay, setCutDisplay, setSettingsOpen}) {
 
 
@@ -9,6 +9,26 @@ function SettingsPage({ cutDisplay, setCutDisplay, setSettingsOpen}) {
         newCutDisplay[catagory] = displayOption
         setCutDisplay(newCutDisplay)
         } 
+
+    const allCutDisplay = (displayOption) => {
+        let newCutDisplay = {...cutDisplay}
+        newCutDisplay.sceneDeleted = displayOption
+        newCutDisplay.redundancy = displayOption
+        newCutDisplay.purple = displayOption
+        newCutDisplay.cutForLength = displayOption
+        newCutDisplay.shorteningFemales = displayOption
+        newCutDisplay.moved = displayOption
+        setCutDisplay(newCutDisplay)
+    }
+
+    const checkAllValues = (displayOption) => {
+        let newCutDisplay = {...cutDisplay}
+        if (newCutDisplay.sceneDeleted === displayOption && newCutDisplay.redundancy === displayOption && newCutDisplay.purple === displayOption && newCutDisplay.cutForLength === displayOption && newCutDisplay.shorteningFemales === displayOption && newCutDisplay.moved === displayOption) {
+            return true
+        } else {
+            return false
+        }
+    }
 
         const styleObject = {
             lineHeight: '1', 
@@ -36,7 +56,33 @@ function SettingsPage({ cutDisplay, setCutDisplay, setSettingsOpen}) {
             <div className='close-button'>
                 <IconButton size='small' onClick={() => setSettingsOpen(false)}>X</IconButton>
             </div>
-            <div><p className="cut-type-heading">Entire Scene or Chorus Deleted from Quarto 1</p>
+            <div>
+                <p className="top-cut-type-heading">All Cuts</p>
+                <div className='all-settings-buttons'>       
+                    <Button
+                        variant="contained" 
+                        size="small"
+                        className="settings-button"
+                        sx={sxProps}
+                        style={checkAllValues('greyed') ? selectedStyleObject : styleObject}
+                        onClick={() => allCutDisplay('greyed')}>Greyed Out</Button>
+                    <Button 
+                        variant="contained" 
+                        size="small" 
+                        sx={sxProps}
+                        className="settings-button"
+                        style={checkAllValues('lines') ? selectedStyleObject : styleObject}
+                        onClick={() => allCutDisplay('lines')}>Dashed Line</Button>
+                    <Button 
+                        variant="contained" 
+                        size="small" 
+                        sx={sxProps}
+                        className="settings-button"
+                        style={checkAllValues('none') ? selectedStyleObject : styleObject}
+                        onClick={() => allCutDisplay('none')}> Fully Hidden</Button>
+                </div>
+                <Divider textAlign="center" >CUT TYPES:</Divider>
+                <p className="top-cut-type-heading">Entire Scene or Chorus Deleted from Quarto 1</p>
             <div className='settings-buttons'>       
                 <Button
                     variant="contained" 
