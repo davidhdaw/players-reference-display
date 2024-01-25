@@ -28,6 +28,18 @@
     color:var(--semantic-colors-unit-text, #0F3569);
 };
 
+.top-cut-type-heading {
+    font-family: Montserrat;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 37px;
+    letter-spacing: 0px;
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    text-align: left;
+    color:var(--semantic-colors-unit-text, #0F3569);
+}
+
 .settings-buttons {
     font-family: Lora;
     font-size: 18px;
@@ -35,4 +47,14 @@
     font-weight: 400;
     line-height: 160%; /* 38.4px */
     margin-right: 14px;
+}
+
+.all-settings-buttons {
+    font-family: Lora;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 38.4px */
+    margin-right: 14px;
+    margin-bottom: 2rem;
 }
