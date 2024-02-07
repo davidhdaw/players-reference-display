@@ -1,6 +1,5 @@
 .settingsPage {
     margin-top: 100px;
-    scroll-margin-top: 300px;
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -8,6 +7,14 @@
     margin-left: 10rem;
     margin-right: 2rem;
 }
+
+@media only screen and (max-device-width: 600px) {
+    .settingsPage {
+        margin-top: 150px;
+        margin-left: 5rem;
+    }
+}
+
 
 .close-button {
     min-width: 75%;

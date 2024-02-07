@@ -40,3 +40,9 @@
 .unit-lines {
     width: 100%;
 }
+
+@media only screen and (max-device-width: 600px) {
+.unit-lines {
+    font-size: 24pt;
+}
+}

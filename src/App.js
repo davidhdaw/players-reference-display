@@ -31,11 +31,11 @@ const [altOption, setAltOption] = useState(false)
         </header>
         { settingsOpen ? <body>
         <SettingsPage cutDisplay={cutDisplay} setCutDisplay={setCutDisplay} setSettingsOpen={setSettingsOpen} />
-        <NavShelf play={playData} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
+        <NavShelf play={playData} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} setSettingsOpen={setSettingsOpen} />
         </body>
         : <body>
         <PlayContainer play={playData} viewMode={viewMode} cutDisplay={cutDisplay} altOption={altOption} />
-        <NavShelf play={playData} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} />
+        <NavShelf play={playData} openDrawer={openDrawer} setOpenDrawer={setOpenDrawer} setSettingsOpen={setSettingsOpen} />
         </body>
         }
       </div>

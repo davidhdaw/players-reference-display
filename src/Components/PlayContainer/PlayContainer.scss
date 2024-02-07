@@ -1,10 +1,18 @@
 .playContainer {
-    margin-top: 100px;
-    scroll-margin-top: 300px;
+    padding-top: 100px;
+    scroll-margin: 500px !important;
     display: flex;
     flex-direction: column;
     align-items: start;
     text-align: left;
     width: 736px;
     margin-left: 193px;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .playContainer {
+        padding-top: 150px;
+        scroll-margin: 500px !important;
+        margin-left: 100px;
+    }
 }

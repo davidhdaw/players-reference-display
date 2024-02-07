@@ -26,9 +26,31 @@
     font-family: Montserrat;
     font-size: 12px;
     font-weight: 500;
-    line-height: 19.2px;
     letter-spacing: 0px;
     color: var(--semantic-colors-primary-color, #190B28);
     margin-block-end: 0px;
     margin-top: 8px;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .unit-description-shelf {
+        text-align: left;
+        font-family: Montserrat;
+        font-weight: 500;
+        letter-spacing: 0px;
+        color: var(--semantic-colors-primary-color, #190B28);
+        margin-block-end: 0px;
+        margin-top: 8px;
+        font-size: 1.5rem;
+        -moz-text-size-adjust: none;   
+        -webkit-text-size-adjust: none;   
+        font-size-adjust: none;
+    }
+    .unit-num-shelf {
+        font-size: 1.75rem;
+    }
+
+    .sidebar-act {
+        font-size: 2rem;
+    }
 }
