@@ -58,6 +58,8 @@
     margin-block-end: 0px;
 }
 
+
+
 .split-line {
     color: var(--semantic-colors-primary-text, #190B28);
     font-family: Lora;
@@ -93,4 +95,13 @@
     height: 30px;
     margin-block-start: 2px;
     margin-block-end: 0px;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .speaker, .speech-heading {
+        font-size: 24pt; 
+    }
+    .end-line, .line-container, .stage-direction, .split-line {
+        font-size: 24pt;
+    }
 }

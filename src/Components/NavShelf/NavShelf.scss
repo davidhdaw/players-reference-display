@@ -6,6 +6,7 @@
 .drawerContents {
     display: flex;
     flex-direction: row;
+    overflow: scroll;
 }
 
 .drawerLip {
@@ -18,4 +19,8 @@
     .NavShelf {
         width: 100%;
     }
+  }
+
+  .SwipeDrawer {
+    overflow: scroll
   }

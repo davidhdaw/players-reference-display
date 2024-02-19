@@ -45,8 +45,11 @@ function NavShelf({play, openDrawer, setOpenDrawer, setSettingsOpen}) {
             onClickAway={() => openDrawer && setOpenDrawer(false)}
             >
             <SwipeableDrawer
+            className="SwipeDrawer"
                 sx={drawerStyles}
               anchor="right"
+              allowSwipeInChildren="true"
+              ModalProps={{keepMounted: true}}
               open={openDrawer}
               onClose={e => setOpenDrawer(false)}
               >

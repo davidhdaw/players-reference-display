@@ -5,3 +5,9 @@
     margin-bottom: 2px;
     color: #1A936F
   }
+
+  @media only screen and (max-device-width: 600px) {
+    .end-line, .line-container .stage-direction .split-line {
+        font-size: 24pt;
+    }
+}
