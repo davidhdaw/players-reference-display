@@ -44,7 +44,6 @@
 .end-line, .stage-direction {
     color: var(--semantic-colors-stage-direction, #473C53);
     font-family: Poppins;
-    font-size: 19.2px;
     font-style: italic;
     font-weight: 400;
     line-height: 30.72px
@@ -64,17 +63,6 @@
     margin-right: 25px;
     color: grey;
     font-size: 14pt;
-};
-
-.line {
-    color: var(--semantic-colors-primary-text, #190B28);    
-    font-family: Lora;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; /* 38.4px */
-    margin-block-end: 16px;
-    margin-block-start: 0.3em;
 };
 
 .split-line {
@@ -106,3 +94,9 @@
     font-weight: 400;
     line-height: 160%; /* 25.6px */
 };
+
+@media only screen and (max-device-width: 600px) {
+  .end-line, .line-container, .stage-direction, .split-line {
+      font-size: 24pt;
+  }
+}

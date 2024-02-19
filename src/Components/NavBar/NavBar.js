@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconButton, Button, Menu, MenuItem, Divider } from '@mui/material';
+import { IconButton, Button, Menu, MenuItem, Divider, useMediaQuery } from '@mui/material';
 import './NavBar.scss';
 import SettingsIcon from '@mui/icons-material/Settings';
 import ListIcon from '@mui/icons-material/List';
@@ -10,6 +10,14 @@ function NavBar({setOpenDrawer, viewMode, setSettingsOpen, setViewMode, setCutDi
     const [anchorSettingsEl, setAnchorSettingsEl] = React.useState(null);
     const modeOpen = Boolean(anchorEl);
     const settingsOpen = Boolean(anchorSettingsEl);
+
+let iconFontSize = "1.5rem"
+let menuFontSize = {}
+
+if (useMediaQuery('(max-device-width:600px)')) {
+  iconFontSize = "3rem"
+  menuFontSize = {fontSize: '2rem'}
+}
 
 
 
@@ -55,7 +63,9 @@ const openDrawer = () => {
 
 let styleObject = {
     lineHeight: '0', 
-    borderRadius: '35px' 
+    fontSize: 'inherit',
+    borderRadius: '35px',
+    
 }
 
 if (viewMode === 'Basic') {
@@ -75,8 +85,9 @@ if (viewMode === 'Basic') {
         </div>
         <div className="ButtonContainer">
         <Button variant="contained" 
-        size="small" 
+        
         style={styleObject}
+        size='small'
         id="mode-positioned-button"
         aria-controls={modeOpen ? 'mode-positioned-menu' : undefined}
         aria-haspopup="true"
@@ -84,7 +95,7 @@ if (viewMode === 'Basic') {
         onClick={handleClick}
         
         >
-            <MenuBookIcon style={{ marginRight: '10px'}} />
+            <MenuBookIcon style={{ fontSize: iconFontSize, marginRight: '10px'}} />
             <p>{viewMode}</p>
         </Button>
         <Menu
@@ -103,13 +114,13 @@ if (viewMode === 'Basic') {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={(e) => changeViewMode('Basic')}>Basic</MenuItem>
-        <MenuItem onClick={(e) => changeViewMode('Reader')}>Reader</MenuItem>
-        <MenuItem onClick={(e) => changeViewMode('Student')}>Student</MenuItem>
-        <MenuItem onClick={(e) => changeViewMode('Performer')}>Performer</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeViewMode('Basic')}>Basic</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeViewMode('Reader')}>Reader</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeViewMode('Student')}>Student</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeViewMode('Performer')}>Performer</MenuItem>
       </Menu>
         <IconButton aria-label="list" color="primary" onClick={openDrawer}>
-            <ListIcon />
+            <ListIcon style={{fontSize: iconFontSize}} />
         </IconButton>
         <IconButton 
         aria-label="settings" 
@@ -120,7 +131,7 @@ if (viewMode === 'Basic') {
         aria-expanded={settingsOpen ? 'true' : undefined}
         onClick={handleSettingsClick}
         >
-            <SettingsIcon />
+            <SettingsIcon style={{fontSize: iconFontSize}} />
         </IconButton>
         <Menu
         id="settings-positioned-menu"
@@ -139,15 +150,15 @@ if (viewMode === 'Basic') {
         }}
       >
                 {
-            altOption ? <MenuItem onClick={(e) => setAltOption(false)}>Hide Alternate Lines</MenuItem> : <MenuItem onClick={(e) => setAltOption(true)}>View Alternate Lines</MenuItem>
+            altOption ? <MenuItem sx={menuFontSize} onClick={(e) => setAltOption(false)}>Hide Alternate Lines</MenuItem> : <MenuItem sx={menuFontSize} onClick={(e) => setAltOption(true)}>View Alternate Lines</MenuItem>
         }
                 <Divider />
-        <p> Cut Lines:</p>
-        <MenuItem onClick={(e) => changeCutDisplay('greyed')}>Greyed Out</MenuItem>
-        <MenuItem onClick={(e) => changeCutDisplay('lines')}>Dashed Line ---</MenuItem>
-        <MenuItem onClick={(e) => changeCutDisplay('none')}>Hidden</MenuItem>
+        <p className="menu_p"> Cut Lines:</p>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeCutDisplay('greyed')}>Greyed Out</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeCutDisplay('lines')}>Dashed Line ---</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => changeCutDisplay('none')}>Hidden</MenuItem>
         <Divider />
-        <MenuItem onClick={(e) => setSettingsOpen(true)}>Cut Display Settings</MenuItem>
+        <MenuItem sx={menuFontSize} onClick={(e) => setSettingsOpen(true)}>Cut Display Settings</MenuItem>
       </Menu>
         </div>
     </div>

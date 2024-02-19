@@ -40,3 +40,18 @@
 .unit-lines {
     width: 100%;
 }
+
+@media only screen and (max-device-width: 600px) {
+.unit-lines {
+    font-size: 24pt;
+    
+}
+.unit-location, .unit-description {
+    font-size: 24pt;
+    line-height: 28pt;
+}
+.unit-heading h1 {
+    font-size: 28pt;
+    line-height: 28pt;
+}
+}

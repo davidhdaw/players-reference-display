@@ -2,3 +2,25 @@
     width: 25%;
 
 }
+
+.drawerContents {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+}
+
+.drawerLip {
+    border-right: 2px solid #8C8594;
+    min-width: 3rem;
+    display: flex;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .NavShelf {
+        width: 100%;
+    }
+  }
+
+  .SwipeDrawer {
+    overflow: scroll
+  }

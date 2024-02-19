@@ -1,16 +1,40 @@
 import React from "react";
 import "./ActShelf.scss";
-import {Accordion, ListItemButton, AccordionDetails, AccordionSummary, Grid } from "@mui/material";
+import {Accordion, ListItemButton, AccordionDetails, AccordionSummary, Grid, useMediaQuery } from "@mui/material";
 
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
+function ActShelf({act, acti, setOpenDrawer, setSettingsOpen}) {
 
-function ActShelf({act, acti}) {
-
-    const testFunction = (id) => {
-        const element = document.getElementById(id)
-        element.scrollIntoView({behavior: 'smooth'})
+let mobile = false
+    
+if (useMediaQuery('(max-device-width:600px)')) {
+        mobile = true
     }
+
+    const unitClick = (id) => {
+            setSettingsOpen(false)
+        setTimeout(() => { 
+            let offset = 75
+            if (mobile) {
+                setOpenDrawer(false)
+                offset = 125
+            } 
+            const element = document.getElementById(id)
+            // element.scrollIntoView({behavior: 'smooth'})
+                window.scrollTo({
+                  behavior: 'smooth',
+                  top:
+                    element.getBoundingClientRect().top -
+                    document.body.getBoundingClientRect().top -
+                    offset,
+                })
+
+    }, 300);
+
+
+        
+        }
 
     const actNum = acti + 1;
 
@@ -50,11 +74,12 @@ function ActShelf({act, acti}) {
                        act && act.map((unit, i) => {
                         const unitID = 'unit' + acti + i;
                             return (
-                                <ListItemButton align='left' className='sidebar-unit' key={i} onClick={(e) => testFunction(unitID)} sx={{display: 'flex', 
+                                <ListItemButton align='left' className='sidebar-unit' key={i} onClick={(e) => unitClick(unitID)} sx={{display: 'flex', 
                                 flexDirection: 'column', 
                                 alignItems: 'flex-start', 
                                 width: 1/1,
                                 borderTop: 1,
+                                fontSize: 'large',
                                 padding: '16px',
                                 color: '#190B28',
                                 borderColor: '#BAB6BF'}}>
