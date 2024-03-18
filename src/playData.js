@@ -22,17 +22,10 @@ export const playData = [
         },
         { Content: ["Chorus"], Type: "speaker", Notes: [] },
         {
-          Content: ["Two", "households", "both", "alike", "in", "dignity,", ""],
+          Content: ["Two", "household", "friends,", "alike", "in", "dignity,"],
           Type: "line",
           Notes: [
             { words: [5], synonym: "social standing", type: "gloss" },
-            {
-              words: [2],
-              header: "Alternative Text",
-              noteContent:
-                "Q1 reads: Two households, friends, alike in dignity...\nQ2's version of the prologue is a carefully considered sonnet that is so familiar and so well-constructed that it is hard to accept Q1's readings, but this specific change seems tenable.",
-              type: "student",
-            },
             {
               words: [5],
               synonym: "social standing",
@@ -40,14 +33,7 @@ export const playData = [
               altNote: true,
             },
           ],
-          altContent: [
-            "Two",
-            "households,",
-            "friends,",
-            "alike",
-            "in",
-            "dignity,",
-          ],
+          altContent: ["Two", "households,", "both", "alike", "in", "dignity,"],
           lineNum: 1,
         },
         {
@@ -66,7 +52,20 @@ export const playData = [
           lineNum: 2,
         },
         {
-          Content: [
+          Content: ["From", "civil", "brawls", "broke", "into", "emnity,"],
+          Type: "line",
+          Notes: [
+            {
+              words: [1, 2],
+              synonym: "long-standing feud",
+              type: "gloss",
+              altNote: true,
+            },
+            { words: [6], synonym: "rioting", type: "gloss", altNote: true },
+            { words: [1, 2], synonym: "small fights", type: "gloss" },
+            { words: [5], synonym: "warfare", type: "gloss" },
+          ],
+          altContent: [
             "From",
             "ancient",
             "grudge",
@@ -75,19 +74,14 @@ export const playData = [
             "new",
             "mutiny",
           ],
-          Type: "line",
-          Notes: [
-            { words: [1, 2], synonym: "long-standing fued", type: "gloss" },
-            { words: [6], synonym: "rioting", type: "gloss" },
-          ],
-          altContent: ["From", "civil", "brawls", "broke", "into", "emnity,"],
           lineNum: 3,
         },
         {
           Content: [
-            "Where",
+            "",
+            "Whose",
             "civil",
-            "blood",
+            "war",
             "makes",
             "civil",
             "hands",
@@ -95,19 +89,14 @@ export const playData = [
           ],
           Type: "line",
           Notes: [
-            { words: [1], synonym: "citizen's", type: "gloss" },
-            { words: [4], synonym: "peaceful", type: "gloss" },
-            {
-              words: [0, 1, 2],
-              header: "Alternative Text",
-              noteContent: 'Q1 reads "Whose civil war..." ',
-              type: "student",
-            },
+            { words: [1], synonym: "citizen's", type: "gloss", altNote: true },
+            { words: [4], synonym: "peaceful", type: "gloss", altNote: true },
+            { words: [5], synonym: "peaceful", type: "gloss" },
           ],
           altContent: [
-            "Whose",
+            "Where",
             "civil",
-            "war",
+            "blood",
             "makes",
             "civil",
             "hands",
@@ -138,16 +127,29 @@ export const playData = [
             "of",
             "star-crossed",
             "lovers",
-            "take",
+            "took",
             "their",
             "life;",
           ],
           Type: "line",
-          Notes: [{ words: [3], synonym: "cursed", type: "gloss" }],
+          Notes: [
+            { words: [3], synonym: "cursed", type: "gloss" },
+            { words: [3], synonym: "cursed", type: "gloss", altNote: true },
+          ],
           lineNum: 6,
+          altContent: [
+            "A",
+            "pair",
+            "of",
+            "star-crossed",
+            "lovers",
+            "take",
+            "their",
+            "life;",
+          ],
         },
         {
-          Content: ["Whose", "misadventured", "piteous", "overthrows", ""],
+          Content: ["Whose", "misadventures,", "piteous", "overthrows", ""],
           Type: "line",
           Notes: [
             { words: [2, 3], synonym: "pitiful downfall", type: "gloss" },
@@ -162,17 +164,48 @@ export const playData = [
               type: "scansion",
             },
             {
-              words: [1],
-              header: "Alternative Text",
+              words: [3],
+              synonym: "pitiful downfall",
+              type: "gloss",
+              altNote: true,
+            },
+            {
+              words: [2],
+              newWording: "pit-yous",
+              header: "Scansion: shortening",
+              pronounciation: "pit-yuhs;  ˈpɪt yəs",
+              rule: "Elision",
               noteContent:
-                'Q1 says "misadventures," implying that misadventure and piteous overthrows are separate things. Although Q1\'s version of the prologue seems dubious, this is an individual reading that an actor might consider.',
-              type: "student",
+                "The final two syllables are elided into a single one. This pronunciation is common in most British dialects.",
+              type: "scansion",
+              altNote: true,
             },
           ],
           lineNum: 7,
+          altContent: ["Whose", "misadventured", "piteous", "overthrows"],
         },
         {
           Content: [
+            "(Through",
+            "the",
+            "continuing",
+            "of",
+            "their",
+            "fathers’",
+            "strife",
+          ],
+          Type: "line",
+          Notes: [
+            {
+              words: [0, 6],
+              header: "Transposition of lines",
+              noteContent:
+                "The Performance Edition (Q1) version of the prologue is slightly shorter and transposes some lines. It is with this line that the two versions of the prologue begin to diverge. Especially notable is that Q1 eliminates the spoiler that Romeo and Juliet die, from this line and from the prologue as a whole.",
+              type: "student",
+            },
+          ],
+          lineNum: 8,
+          altContent: [
             "Doth",
             "with",
             "their",
@@ -182,12 +215,33 @@ export const playData = [
             "parents’",
             "strife.",
           ],
-          Type: "line",
-          Notes: [],
-          lineNum: 8,
         },
         {
           Content: [
+            "And",
+            "death-marked",
+            "passage",
+            "of",
+            "their",
+            "parent's",
+            "rage",
+            "",
+          ],
+          Type: "line",
+          Notes: [
+            {
+              words: [6],
+              header: "Historic Rhyme",
+              noteContent:
+                'Note Content: Although "love" and "remove" no longer rhyme, this is not an error on Shakespeare\'s part, but a reflection of the fact that in his time both words were pronounced slightly differently. They did, in fact, rhyme. Increasingly, modern theater companies are getting interested in the "Original Pronunciation" movement which produces full performances using the dialect of the time.\n\n',
+              type: "student",
+              altNote: true,
+            },
+            { words: [1], synonym: "frightful", type: "gloss", altNote: true },
+            { words: [1], synonym: "tragic", type: "gloss" },
+          ],
+          lineNum: 9,
+          altContent: [
             "The",
             "fearful",
             "passage",
@@ -195,21 +249,7 @@ export const playData = [
             "their",
             "death-marked",
             "love",
-            "",
           ],
-          Type: "line",
-          Notes: [
-            { words: [1], synonym: "frightful", type: "gloss" },
-            { words: [5], synonym: "doomed", type: "gloss" },
-            {
-              words: [6],
-              header: "Historic rhyme",
-              noteContent:
-                'Although "love" and "remove" no longer rhyme, this is not an error on Shakespeare\'s part, but a reflection of the fact that in his time both words were pronounced slightly differently. They did, in fact, rhyme. Increasingly, modern theater companies are getting interested in the "Original Pronunciation" movement which produces full performances using the dialect of the time.',
-              type: "performance",
-            },
-          ],
-          lineNum: 9,
         },
         {
           Content: [
@@ -235,6 +275,7 @@ export const playData = [
             },
           ],
           lineNum: 10,
+          cutType: "Cut for length",
         },
         {
           Content: [
@@ -248,8 +289,19 @@ export const playData = [
             "remove,",
           ],
           Type: "line",
-          Notes: [],
+          Notes: [
+            {
+              words: [1, 4],
+              header: "Spoiler Removed",
+              noteContent:
+                "This line from the Maximal Edition (Q2) contains a second reference to Romeo and Juliet's eventual deaths. Both spoilers are cut from the Performance Edition (Q1).",
+              type: "student",
+            },
+            { words: [5], synonym: "nothing", type: "gloss" },
+            { words: [3, 4], synonym: "kid's deaths", type: "gloss" },
+          ],
           lineNum: 11,
+          cutType: "Cut for length",
         },
         {
           Content: [
@@ -298,6 +350,52 @@ export const playData = [
           Content: [
             "What",
             "here",
+            "we",
+            "want",
+            "we'll",
+            "study",
+            "to",
+            "amend.",
+          ],
+          Type: "line",
+          Notes: [
+            {
+              words: [5],
+              newWording: "toil",
+              header: "Scansion: shortening",
+              pronounciation: "1 syllable: tɔɪl",
+              rule: "Elision",
+              noteContent:
+                "This word is occasionally stretched to two syllables, but it should not be in this case.",
+              type: "scansion",
+              altNote: true,
+            },
+            {
+              words: [4, 5],
+              header: "Critical Insights",
+              noteContent:
+                "These words suggest that the deliverer of the line is an authorial figure. The chorus is sometimes costumed as a writer or bookholder (i.e., prompter), and has occasionally been portrayed as Shakespeare, himself.\n\n",
+              type: "performance",
+              altNote: true,
+            },
+            {
+              words: [0, 9],
+              synonym:
+                "What is not clear from the prologue, our performance will clarify.",
+              type: "gloss",
+              altNote: true,
+            },
+            {
+              words: [0, 7],
+              synonym:
+                "Anything unclear we'll try to explain through performance.",
+              type: "gloss",
+            },
+          ],
+          lineNum: 14,
+          altContent: [
+            "What",
+            "here",
             "shall",
             "miss,",
             "our",
@@ -308,33 +406,6 @@ export const playData = [
             "mend.",
             "",
           ],
-          Type: "line",
-          Notes: [
-            {
-              words: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
-              synonym:
-                "What is not clear from the prologue, our performance will clarify.",
-              type: "gloss",
-            },
-            {
-              words: [5],
-              newWording: "toil",
-              header: "Scansion: shortening",
-              pronounciation: "1 syllable: tɔɪl",
-              rule: "Elision",
-              noteContent:
-                "This word is occasionally stretched to two syllables, but it should not be in this case.",
-              type: "scansion",
-            },
-            {
-              words: [4, 5],
-              header: "Critical Insights",
-              noteContent:
-                "These words suggest that the deliverer of the line is an authorial figure. The chorus is sometimes costumed as a writer or bookholder (i.e., prompter), and has occasionally been portrayed as Shakespeare, himself.",
-              type: "student",
-            },
-          ],
-          lineNum: 14,
         },
       ],
     },
@@ -5047,12 +5118,12 @@ export const playData = [
           Type: "line",
           cutType: "none",
           Notes: [
+            { words: [5], synonym: "cousin", type: "gloss" },
             {
               words: [0, 3],
-              synonym: "an easily discernible target",
+              synonym: "An easily discernible target",
               type: "gloss",
             },
-            { words: [5], synonym: "cousin", type: "gloss" },
           ],
           lineNum: 49,
         },
@@ -5274,8 +5345,7 @@ export const playData = [
           Notes: [
             {
               words: [0, 8],
-              synonym:
-                "Because her stockpile of beauty will not be passed on because of her virginity.",
+              synonym: "Because her stockpile of beauty will not be passed on.",
               type: "gloss",
             },
           ],
@@ -7110,7 +7180,7 @@ export const playData = [
         },
         {
           Content: ["Peter"],
-          Type: "line",
+          Type: "speech heading",
           cutType: "none",
           Notes: [],
           lineNum: 13,
@@ -17000,7 +17070,7 @@ export const playData = [
         },
         {
           Content: ["Anon,", "anon."],
-          Type: "line",
+          Type: "split line",
           cutType: "none",
           Notes: [{ words: [0, 1], synonym: "She's coming.", type: "gloss" }],
           lineNum: 17,
@@ -23265,7 +23335,7 @@ export const playData = [
             "reels",
           ],
           Type: "line",
-          cutType: "none",
+          cutType: "Redundancy",
           Notes: [],
           lineNum: 4,
         },
@@ -25831,6 +25901,92 @@ export const playData = [
           Type: "stage direction",
           cutType: "none",
           Notes: [],
+        },
+        {
+          Content: ["MERCUTIO"],
+          Type: "speech heading",
+          cutType: "none",
+          Notes: [],
+        },
+        {
+          Content: [
+            "Why,",
+            "what’s",
+            "become",
+            "of",
+            "Romeo?",
+            "Came",
+            "he",
+            "not",
+            "home",
+            "tonight?",
+          ],
+          Type: "line",
+          cutType: "none",
+          Notes: [
+            { words: [9], synonym: "last night", type: "gloss" },
+            {
+              words: [11],
+              synonym: "last night",
+              type: "gloss",
+              altNote: true,
+            },
+          ],
+          altContent: [
+            "Where",
+            "the",
+            "devil",
+            "should",
+            "this",
+            "Romeo",
+            "be?",
+            "Came",
+            "he",
+            "not",
+            "home",
+            "tonight?",
+          ],
+        },
+        {
+          Content: ["Benvolio"],
+          Type: "speech heading",
+          cutType: "none",
+          Notes: [],
+        },
+        {
+          Content: [
+            "Not",
+            "to",
+            "his",
+            "father’s.",
+            "I",
+            "spake",
+            "with",
+            "his",
+            "man.",
+          ],
+          Type: "line",
+          cutType: "none",
+          Notes: [
+            { words: [6, 7, 8], synonym: "w/ his servant", type: "gloss" },
+            {
+              words: [6, 8],
+              synonym: "w/ his servant",
+              type: "gloss",
+              altNote: true,
+            },
+          ],
+          altContent: [
+            "Not",
+            "to",
+            "his",
+            "father’s.",
+            "I",
+            "spoke",
+            "with",
+            "his",
+            "man.",
+          ],
         },
       ],
     },

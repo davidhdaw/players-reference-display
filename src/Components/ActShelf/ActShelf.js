@@ -73,6 +73,7 @@ if (useMediaQuery('(max-device-width:600px)')) {
                     {
                        act && act.map((unit, i) => {
                         const unitID = 'unit' + acti + i;
+                        const unitNum = i + 1 + (acti * 24);
                             return (
                                 <ListItemButton align='left' className='sidebar-unit' key={i} onClick={(e) => unitClick(unitID)} sx={{display: 'flex', 
                                 flexDirection: 'column', 
@@ -83,7 +84,7 @@ if (useMediaQuery('(max-device-width:600px)')) {
                                 padding: '16px',
                                 color: '#190B28',
                                 borderColor: '#BAB6BF'}}>
-                                    <h2 className='unit-num-shelf'>Unit {i+1}</h2>
+                                    <h2 className='unit-num-shelf'>Unit {unitNum}</h2>
                                     <p className='unit-description-shelf'>{unit.description}</p>
                                 </ListItemButton>
                             )

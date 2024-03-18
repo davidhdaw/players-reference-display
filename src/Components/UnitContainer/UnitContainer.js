@@ -8,11 +8,12 @@ import "./UnitContainer.scss";
 function UnitContainer({uniti, unit, acti, openNote, setOpenNote, viewMode, cutDisplay, altOption}) {
     const unitId = 'unit' + acti + uniti
     const noteId = 'a' + acti + 'u' + uniti
+    const unitNum = uniti + 1 + (acti * 24)
 
     return(
         <div className='unit-container' id={unitId}>
             <div className='unit-info'>
-            <h1 className='unit-heading'>Unit {uniti+1} | {unit.data}</h1>
+            <h1 className='unit-heading'>Unit {unitNum} | {unit.data}</h1>
             <h3 className='unit-location'>{unit.location}</h3>
             <h3 className='unit-description'>{unit.description}</h3>
             </div>
